@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import  { updateReducer2action } from './passwordActions.js';
-import  { updateReducer1action } from './usernameActions.js';
+import  { updateReducer1action, getRequest } from './usernameActions.js';
 import { Form, Icon, Input, Button, message } from 'antd';
 import './index.scss';
 const FormItem = Form.Item;
@@ -33,6 +33,7 @@ class AppLogin extends Component {
     this.props.onUpdateUsername(e.target.value);
   }
   componentDidUpdate(){
+    this.props.onGetRequest();
     console.log(this.props)
   }
   render() {
@@ -74,7 +75,8 @@ const mapStateToProps = state => ({  //ES6中箭头函数返回对象 第一个�
 
 const mapDispatchToProps = {
   onUpdatePassword: updateReducer2action,
-  onUpdateUsername: updateReducer1action
+  onUpdateUsername: updateReducer1action,
+  onGetRequest: getRequest
 }   //第二个参数将所有的action创建的函数传到组件同名属性，无须使用dispatch直接使用prsps调用
 
 const App = Form.create()(AppLogin);
