@@ -70,7 +70,8 @@ class AppLogin extends Component {
 
 const mapStateToProps = state => ({  //ES6中箭头函数返回对象 第一个参数将state传递给props  
   username:state.reducer1,
-  password:state.reducer2
+  password:state.reducer2,
+  email: state.reducer3
 })
 
 const mapDispatchToProps = {
