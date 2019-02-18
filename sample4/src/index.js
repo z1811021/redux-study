@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './views/login';
 import * as serviceWorker from './serviceWorker';
-import { applyMiddleware, compose, createStore, combineReducers } from 'redux'; // 引入combineReducers
+import { applyMiddleware, compose, createStore, combineReducers } from 'redux'; // 引入combineReducers, applyMiddleware
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { reducer1, reducer3 } from './views/login/usernameReducer.js'

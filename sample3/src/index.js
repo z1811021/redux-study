@@ -17,7 +17,7 @@ const allReducers = combineReducers({  //使用combineReducers 将两个reducer�
 const store = createStore(
   allReducers,
   {reducer1:[1], reducer2:[2]}, // 替换为allReducers 并且设置初始state 作为第二个参数
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );  
 
 ReactDOM.render(
